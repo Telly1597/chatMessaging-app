@@ -1,0 +1,142 @@
+.scroll-to-bottom {
+    height: 65vh;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.message-box {
+    border: 2px solid black;
+    padding: 25px;
+    margin: auto 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-image: url('../Images/ChatBg.jpg');
+    background-size: cover;
+    margin-bottom: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 5px;
+}
+
+#chat-box h2 {
+    font-family: 'Varela Round', sans-serif;
+    color: black;
+    text-align: center;
+    font-size: 2em;
+}
+
+#message-input {
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    margin-top: 10px;
+}
+
+#message-input textarea {
+    padding: 10px;
+    width: 90%;
+    margin-right: 3px;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.you {
+    width: fit-content;
+    background-color: rgb(119, 233, 159);
+    border-radius: 10px;
+    padding: 10px;
+    align-self: flex-end;
+    border: 1px solid black;
+    margin: 3px 0px;
+}
+
+.message-input-txt {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Padding on the right to make space for the button */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    min-height: 50px;
+    font-size: 16px;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.textarea-wrapper textarea {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(to bottom, #e5e5e5 0%, #f2f2f2 100%);
+    border: none;
+    width: 300px;
+    height: 100px;
+    box-sizing: border-box;
+    border-bottom: 1px dotted #999;
+    resize: none;
+}
+
+.textarea-wrapper textarea:focus {
+    outline: none;
+}
+
+.other {
+    width: fit-content;
+    background-color: rgb(129, 171, 243);
+    border-radius: 10px;
+    padding: 10px;
+    align-self: flex-start;
+    border: 1px solid black;
+    margin: 3px 0px;
+}
+
+.message-details {
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: rgb(50, 50, 50);
+}
+
+.send-button {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 60px;
+    background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+}
+
+/* Adjustments for medium devices */
+@media screen and (max-width: 1024px) {
+    #message-input textarea {
+        width: 85%;
+    }
+}
+
+/* Adjustments for smaller devices */
+@media screen and (max-width: 768px) {
+    .message-box {
+        padding: 15px;
+        margin: 10px 5px;
+    }
+    .you, .other {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    .send-button {
+        width: 40px;
+        top: 1px;
+        right: 1px;
+    }
+    .message-input-txt {
+        width: 80%;
+        padding: 8px 35px 8px 8px;
+    }
+    #chat-box h2 {
+        font-size: 1.5em;
+    }
+}

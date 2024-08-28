@@ -1,0 +1,102 @@
+.chat-main{
+    display: inline-block;
+    background-color: white;
+    width: 100%;
+}
+.friend_list {
+   float: left;
+   width: 30%
+}
+.chat_content {
+   float: right;
+   width: 70%
+}
+.chat-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.chat-header p {
+    font-size: 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.p-text {
+    margin: 10px auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+.log-out-btn {
+    display: flex;
+    justify-content: center;
+}
+
+
+.log-out-btn button {
+    width: 30%;
+    margin: 15px 0;
+    background-color: #99f4b6;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 550;
+    cursor: pointer;
+}
+.go-back-btn {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+
+.log-out-btn button:hover {
+    box-shadow: 2px 2px #d4b31e;
+}
+
+.chat-container{
+    background-image: url('../Images/Chat.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 10px 30px;
+}
+
+@media screen and (max-width: 1024px) {
+    .friend_list {
+        width: 40%;
+    }
+    .chat_content {
+        width: 60%;
+    }
+    .go-back-btn {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+/* Styles for smaller devices */
+@media screen and (max-width: 768px) {
+    .chat-main {
+        display: block;
+    }
+    .friend_list {
+        width: 100%;
+    }
+    .chat_content {
+        display: none;
+        width: 100%;
+    }
+    .chat-container.chat-open .friend_list {
+        display: none;
+    }
+    .chat-container.chat-open .go-back-btn {
+        display: block;
+    }
+    .chat-container.chat-open .chat_content {
+        display: block;
+    }
+    
+}
