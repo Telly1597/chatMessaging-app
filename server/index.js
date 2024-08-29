@@ -17,6 +17,10 @@ mongoose.connect(MONGOURL, {
   process.exit(1);
 });
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the ChatApp API');
+});
+
 app.use(cors());
 app.use(express.json())
 
