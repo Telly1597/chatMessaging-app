@@ -6,12 +6,16 @@ const mongoose = require('mongoose');
 const dotenv =  require('dotenv');
 dotenv.config()
 const PORT = process.env.PORT || 4000;
-const MONGOURL = process.env.MONGO_URL
-
-mongoose.connect(MONGOURL); //connect to db
-const db = mongoose.connection;
-db.on('error', (error)=> console.error(error));
-db.once('open', () => console.log('Connected to database'));
+const MONGOURL = process.env.NODE_ENV === 'production' ? process.env.MONGO_URL_PROD : process.env.MONGO_URL_DEV;
+mongoose.connect(MONGOURL, { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true 
+})
+.then(() => console.log('Connected to database'))
+.catch((error) => {
+  console.error('Database connection failed:', error);
+  process.exit(1);
+});
 
 app.use(cors());
 app.use(express.json())
